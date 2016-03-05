@@ -61,7 +61,7 @@
     vm.alpaca = true;
     vm.myRank = parseInt(getCookie('commerceRank'));
 
-    $http.get('/api/commerce/index.php').success(function(res) {
+    $http.get('/api/commerce/').success(function(res) {
         for (var name in res) {
             vm[name] = res[name];
         }
@@ -69,25 +69,24 @@
     });
 
     vm.switchConveyance = function() {
-        return;
-        // vm.trades = angular.copy(vm.conveyance);
-        // if (vm.partner && vm.alpaca) {
-        //     vm.trades.forEach(function(o) {
-        //         o.space += 1;
-        //         o.capacity += 100;
-        //     });
-        //     vm.trades[2].space += 1;
-        //     vm.trades[2].capacity += 100;
-        // } else if (vm.partner) {
-        //     vm.trades.forEach(function(o) {
-        //         o.space += 1;
-        //         o.capacity += 100;
-        //     });
-        // } else if (vm.alpaca) {
-        //     vm.trades[2].space += 2;
-        //     vm.trades[2].capacity += 200;
-        // }
-        // vm.calByCity();
+        vm.trades = angular.copy(vm.conveyance);
+        if (vm.partner && vm.alpaca) {
+            vm.trades.forEach(function(o) {
+                o.space += 1;
+                o.capacity += 100;
+            });
+            vm.trades[2].space += 1;
+            vm.trades[2].capacity += 100;
+        } else if (vm.partner) {
+            vm.trades.forEach(function(o) {
+                o.space += 1;
+                o.capacity += 100;
+            });
+        } else if (vm.alpaca) {
+            vm.trades[2].space += 2;
+            vm.trades[2].capacity += 200;
+        }
+        vm.calByCity();
     };
 
     vm.calByCity = function() {

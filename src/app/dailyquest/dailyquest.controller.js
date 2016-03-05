@@ -9,7 +9,7 @@
   function DailyQuestController($http) {
     var vm = this;
 
-    $http.get('/api/dailyquest/index.php').success(function(res) {
+    $http.get('/api/dailyquest/').success(function(res) {
         vm.questList = res;
         var dailyDate = localStorage.getItem('dailyDate');
         var today = new Date().toDateString();
