@@ -1,0 +1,25 @@
+<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+<div class="sidebar-nav navbar-collapse">
+    <ul class="nav" id="side-menu">
+        <li class="active">
+            <a href="#"><i class="fa fa-github-alt fa-fw"></i> 嘎嘎小鴨 <span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li ng-repeat="d in vm.ducks">
+                    <a ui-sref="{{d.link}}">{{d.text}}</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-bug fa-fw"></i> 噗啾圓仔<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li ng-repeat="link in vm.links">
+                    <a href="{{link.url}}" target="{{link.target}}">{{link.text}}</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+    </ul>
+    <!-- /#side-menu -->
+</div>
+<!-- /.navbar-collapse -->

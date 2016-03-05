@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.ducat {
+    position: relative;
+    .w60 {
+        width: 60px;
+    }
+    .w100 {
+        width: 100px;
+    }
+    .w120 {
+        width: 120px;
+    }
+    .w200 {
+        width: 200px;
+    }
+    .cou_txt1 {
+        background-color: #eef6fc;
+        font-weight: bold;
+    }
+    .cou_txt2 {
+        background: url("../images/cou2.jpg") left top repeat-y;
+    }
+    .se_txt {
+        color: #1b97c2;
+    }
+    .CC {
+        text-align: center;
+    }
+    .crimson {
+        color: crimson;
+        font-weight: bold;
+    }
+    ul.nav-tabs li {
+        &:not(.active) {
+            cursor: pointer;
+        }
+    }
+    table.calculate {
+        border: 1px solid lightgray;
+        border-spacing: 2px;
+        th, td {
+            border: 1px solid lightgray;
+            border-spacing: 2px;
+        }
+    }
+    .alpaca {
+        position: absolute;
+        bottom: 0;
+        left: 900px;
+        cursor: pointer;
+        width: 250px;
+        height: 393px;
+        background-image: url("/assets/images/alpaca.png");
+        &:hover {
+            background-position: 0 -393px;
+        }
+        outline: none;
+    }
+}
+
+.sheep {
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    cursor: pointer;
+}

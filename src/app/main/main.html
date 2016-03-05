@@ -1,0 +1,150 @@
+<section class="container ducat">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">貿易獲利</h1>
+        </div>
+    </div>
+    <tabset>
+        <tab ng-repeat="c in main.citys" heading="{{c.cht_name}}" select="main.tabSelect($index)">
+            <br />
+            <p>
+                {{c.eng_name}}
+            </p>
+            <table class="calculate">
+                <thead>
+                    <tr class="se_txt cou_txt1">
+                        <th class="w200 cou_txt2 CC">貨品</th>
+                        <th>價格</th>
+                        <th class="w100" ng-repeat="car in main.conveyance">{{car.name}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="g in main.goods | filter:{city_id:c.id}">
+                        <td>Lv{{g.level}} {{g.name}}</td>
+                        <td>
+                            <input type="text" ng-model="g.price" class="w60" ng-init="g.price=1;cal(g)" ng-change="main.cal(g)" />
+                        </td>
+                        <td>{{ g.gain[0] | number }}</td>
+                        <td>{{ g.gain[1] | number }}</td>
+                        <td ng-class="{crimson: g.gain[2] >= g.gain[3]}">{{ g.gain[2] | number }}</td>
+                        <td ng-class="{crimson: g.gain[2] <  g.gain[3]}">{{ g.gain[3] | number }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </tab>
+    </tabset>
+    <p ng-init="cityIndex=0">
+        <h4><input type="checkbox" ng-model="partner" ng-change="main.switchConveyance()" />貿易夥伴</h4>
+        <h4><input type="checkbox" ng-model="alpaca" ng-change="main.switchConveyance()" />草泥馬</h4>
+        <select ng-model="main.myRank" ng-change="main.calByCity()" ng-options="r.value as ('Rank ' + r.text) for r in main.ranks"></select>
+    </p>
+    <table>
+        <tbody>
+            <tr>
+                <td valign="top">
+                    <br />
+                    <table cellspacing="0" cellpadding="6" border="1">
+                        <tbody>
+                            <tr>
+                                <td>採集農場石的妖魔</td>
+                                <td>(exp 2500)*3隻</td>
+                                <td>防1保0 </td>
+                            </tr>
+                            <tr>
+                                <td>留守的哥布林</td>
+                                <td>(exp 3000)*2隻</td>
+                                <td>&#12288; </td>
+                            </tr>
+                            <tr>
+                                <td>留守的哥布林弓箭手</td>
+                                <td>(exp 3000)*2隻</td>
+                                <td>&#12288; </td>
+                            </tr>
+                            <tr>
+                                <td>照顧田的人類</td>
+                                <td>(exp 3500)*3隻</td>
+                                <td>防5保0 </td>
+                            </tr>
+                            <tr>
+                                <td>砍柴的巨人</td>
+                                <td>(exp 4000)*3隻</td>
+                                <td>防5保0 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </td>
+                <td width="20"></td>
+                <td>
+                    <br />
+                    <table cellspacing="0" cellpadding="6" border="1">
+                        <tbody>
+                            <tr>
+                                <td>(人類)</td>
+                                <td>不明身分 葛魯奇</td>
+                                <td>(exp 14400)</td>
+                                <td>生命25000</td>
+                                <td>&#12288; </td>
+                            </tr>
+                            <tr>
+                                <td>(地靈)</td>
+                                <td>猛毒的 奇蘭</td>
+                                <td>&#12288;</td>
+                                <td>生命25000、保護30</td>
+                                <td>&#12288; </td>
+                            </tr>
+                            <tr>
+                                <td>(妖魔)</td>
+                                <td>搜刮 克萊傑</td>
+                                <td>&#12288;</td>
+                                <td>&#12288;</td>
+                                <td>&#12288; </td>
+                            </tr>
+                            <tr>
+                                <td>(魔女)</td>
+                                <td>搶奪女俠 魅魯賓</td>
+                                <td>(exp 16000)</td>
+                                <td>生命30000、保護40</td>
+                                <td>重暴會掉面具，解除3種PD </td>
+                            </tr>
+                            <tr>
+                                <td>(食人魔)</td>
+                                <td>獨眼 佩勒斯</td>
+                                <td>&#12288;</td>
+                                <td>生命35000、保護30</td>
+                                <td>&#12288; </td>
+                            </tr>
+                            <tr>
+                                <td>(魔法精靈)</td>
+                                <td>吝嗇鬼 狄更斯</td>
+                                <td>(exp 17000)</td>
+                                <td>生命50000</td>
+                                <td>&#12288; </td>
+                            </tr>
+                            <tr>
+                                <td>(廚師食人魔)</td>
+                                <td>兇惡的 華拉杜魯</td>
+                                <td>(exp 18000)</td>
+                                <td>生命50000、保護20</td>
+                                <td>&#12288; </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <p>
+        &copy; Copyright by 十六夜
+    </p>
+    <script>
+    function EvalSound(soundobj) {
+        var thissound = document.getElementById(soundobj);
+        thissound.play();
+    }
+    </script>
+    <audio id="audio1" src="/assets/sheep.mp3" controls preload="auto" autobuffer class="hide"></audio>
+    <div class="alpaca" ng-click="main.sheep()"></div>
+</section>
