@@ -40,6 +40,10 @@
           target: '_blank',
           text: 'Mabinogi奇幻世界'
       }, {
+          url: 'http://ogc.bowsunfan.la/mabinogi/trainee_knight.html',
+          target: '_blank',
+          text: '騎士好感'
+      }, {
           url: 'http://forum.gamer.com.tw/G2.php?bsn=07422&&sn=15164',
           target: '_blank',
           text: '騎士好感(戴伊、艾樂莉絲)'

@@ -34,8 +34,8 @@
         </tab>
     </tabset>
     <p ng-init="cityIndex=0">
-        <h4><input type="checkbox" ng-model="vm.partner" ng-change="main.switchConveyance()" />貿易夥伴</h4>
-        <h4><input type="checkbox" ng-model="vm.alpaca" ng-change="main.switchConveyance()" />草泥馬</h4>
+        <h4><input type="checkbox" ng-model="main.partner" ng-change="main.switchConveyance()" />貿易夥伴</h4>
+        <h4><input type="checkbox" ng-model="main.alpaca" ng-change="main.switchConveyance()" />草泥馬</h4>
         <select ng-model="main.myRank" ng-change="main.calByCity()" ng-options="r.value as ('Rank ' + r.text) for r in main.ranks"></select>
     </p>
     <table>

@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($http, $document, $cookies) {
+  function MainController($scope, $http, $cookies) {
     var vm = this;
     vm.ranks = [{
         value: 0,
@@ -62,9 +62,9 @@
     vm.myRank = parseInt(getCookie('commerceRank'));
 
     $http.get('/api/commerce/').success(function(res) {
-        for (var name in res) {
-            vm[name] = res[name];
-        }
+        vm.citys = res.citys;
+        vm.conveyance = res.conveyance;
+        vm.goods = res.goods;
         vm.switchConveyance();
     });
 
