@@ -25,6 +25,9 @@
           link: 'home',
           text: '貿易計算雞'
       },{
+          link: 'animaltraining',
+          text: '野生動物訓練'
+      },{
           link: 'dailyquest',
           text: '每日任務'
       },{
@@ -51,6 +54,10 @@
           url: 'http://forum.gamer.com.tw/G2.php?bsn=07422&sn=15163',
           target: '_blank',
           text: '騎士好感(艾希、寇爾)'
+      }, {
+          url: 'http://forum.gamer.com.tw/Co.php?bsn=07422&sn=1715779',
+          target: '_blank',
+          text: '同人故事'
       }, {
           url: 'http://forum.gamer.com.tw/Co.php?bsn=07422&sn=1668493',
           target: '_blank',

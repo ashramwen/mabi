@@ -14,6 +14,12 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+      .state('animaltraining', {
+        url: '/animaltraining',
+        templateUrl: 'app/animaltraining/animaltraining.html',
+        controller: 'AnimalTrainingController',
+        controllerAs: 'at'
+      })
       .state('dailyquest', {
         url: '/dailyquest',
         templateUrl: 'app/dailyquest/dailyquest.html',
