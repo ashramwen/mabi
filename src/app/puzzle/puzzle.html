@@ -4,13 +4,19 @@
       <h1 class="page-header">OX遊戲</h1>
     </div>
   </div>
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="exampleInputName2">Search:</label>
+      <input type="text" class="form-control" id="exampleInputName2" ng-model="search.desc">
+    </div>
+  </form>
+  <br>
   <table class="table table-striped table-hover">
     <tbody>
-      <tr ng-repeat="p in pz.puzzleList track by p.id">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr ng-repeat="p in pz.puzzleList | filter:search track by p.id">
+        <td>{{p.desc}}</td>
+        <td>{{p.ans}}</td>
+        <td>{{p.memo}}</td>
       </tr>
     </tbody>
   </table>
