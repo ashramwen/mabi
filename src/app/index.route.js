@@ -37,6 +37,12 @@
         templateUrl: 'app/blacksmith/blacksmith.html',
         controller: 'BlacksmithController',
         controllerAs: 'bm'
+      })
+      .state('puzzle]', {
+        url: '/puzzle',
+        templateUrl: 'app/puzzle/puzzle.html',
+        controller: 'PuzzleController',
+        controllerAs: 'pz'
       });
 
     $urlRouterProvider.otherwise('/');
