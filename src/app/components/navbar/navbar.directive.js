@@ -36,6 +36,9 @@
       },{
           link: 'blacksmith',
           text: '魔女面具'
+      },{
+          link: 'puzzle',
+          text: 'OX猜謎'
       }];
 
       vm.links = [{

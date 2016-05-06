@@ -38,7 +38,7 @@
         controller: 'BlacksmithController',
         controllerAs: 'bm'
       })
-      .state('puzzle]', {
+      .state('puzzle', {
         url: '/puzzle',
         templateUrl: 'app/puzzle/puzzle.html',
         controller: 'PuzzleController',
