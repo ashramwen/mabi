@@ -5,7 +5,7 @@
         </div>
     </div>
     <tabset>
-        <tab ng-repeat="c in main.citys" heading="{{c.cht_name}}" select="main.tabSelect($index)">
+        <tab ng-repeat="c in main.citys track by c.id" heading="{{c.cht_name}}" select="main.tabSelect($index)">
             <br />
             <p>
                 {{c.eng_name}}
@@ -15,11 +15,11 @@
                     <tr class="se_txt cou_txt1">
                         <th class="w200 cou_txt2 CC">貨品</th>
                         <th>價格</th>
-                        <th class="w100" ng-repeat="car in main.conveyance">{{car.name}}</th>
+                        <th class="w100" ng-repeat="car in main.conveyance track by car.id">{{car.name}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="g in main.goods | filter:{city_id:c.id}">
+                    <tr ng-repeat="g in main.goods | filter:{city_id:c.id} track by g.id">
                         <td>Lv{{g.level}} {{g.name}}</td>
                         <td>
                             <input type="text" ng-model="g.price" class="w60" ng-init="g.price=1;cal(g)" ng-change="main.cal(g)" />
