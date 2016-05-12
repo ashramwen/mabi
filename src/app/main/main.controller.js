@@ -13,18 +13,18 @@
         vm.alpaca = true;
         vm.myRank = parseInt(getCookie('commerceRank'));
 
-        // var ref = new Firebase('https://mabi.firebaseio.com');
-        // ref.on('value', function(snapshot) {
-        //     var res = snapshot.val();
-        //     $timeout(function() {
-        //         vm.citys = res.city;
-        //         vm.conveyance = res.conveyance;
-        //         vm.goods = res.good;
-        //         vm.switchConveyance();
-        //     });
-        // }, function(errorObject) {
-        //     // console.log('The read failed: ' + errorObject.code);
-        // });
+        var ref = new Firebase('https://mabi.firebaseio.com');
+        ref.on('value', function(snapshot) {
+            var res = snapshot.val();
+            $timeout(function() {
+                vm.citys = res.city;
+                vm.conveyance = res.conveyance;
+                vm.goods = res.good;
+                vm.switchConveyance();
+            });
+        }, function(errorObject) {
+            // console.log('The read failed: ' + errorObject.code);
+        });
 
         vm.switchConveyance = function() {
             vm.trades = angular.copy(vm.conveyance);
