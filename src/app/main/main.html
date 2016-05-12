@@ -4,8 +4,8 @@
             <h1 class="page-header">貿易獲利</h1>
         </div>
     </div>
-    <tabset>
-        <tab ng-repeat="c in main.citys track by c.id" heading="{{c.cht_name}}" select="main.tabSelect($index)">
+    <uib-tabset>
+        <uib-tab ng-repeat="c in main.citys track by c.id" heading="{{c.cht_name}}" select="main.tabSelect($index)">
             <br />
             <p>
                 {{c.eng_name}}
@@ -31,8 +31,8 @@
                     </tr>
                 </tbody>
             </table>
-        </tab>
-    </tabset>
+        </uib-tab>
+    </uib-tabset>
     <p ng-init="cityIndex=0">
         <h4><input type="checkbox" ng-model="main.partner" ng-change="main.switchConveyance()" />貿易夥伴</h4>
         <h4><input type="checkbox" ng-model="main.alpaca" ng-change="main.switchConveyance()" />草泥馬</h4>

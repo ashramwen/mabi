@@ -43,6 +43,12 @@
         templateUrl: 'app/puzzle/puzzle.html',
         controller: 'PuzzleController',
         controllerAs: 'pz'
+      })
+      .state('notify', {
+        url: '/notify',
+        templateUrl: 'app/notify/notify.html',
+        controller: 'NotifyController',
+        controllerAs: 'notify'
       });
 
     $urlRouterProvider.otherwise('/');

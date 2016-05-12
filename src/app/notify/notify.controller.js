@@ -3,23 +3,15 @@
 
     angular
         .module('mabi')
-        .factory('notification', notification);
+        .controller('NotifyController', NotifyController);
 
     /** @ngInject */
-    function notification($interval, $cookies) {
+    function NotifyController($interval) {
+        if (!("Notification" in window)) return;
         if (Notification.permission !== "granted") Notification.requestPermission();
+        var vm = this;
         var timer;
-
-        var service = {
-            start: start,
-            stop: stop
-        };
-
-        return service;
-
-        // function init() {
-        //     if (!("Notification" in window)) return;
-        // }
+        start();
 
         function start() {
             timer = $interval(function() {
@@ -27,14 +19,11 @@
                 // var h = today.getHours();
                 var m = today.getMinutes();
                 var s = today.getSeconds();
-                if (m === 57 && s === 0) {
-                    if (Notification.permission === "granted") {
-                        new Notification('嘎嘎嘎呱呱啾', {
-                            body: "OX要開始了!"
-                        });
-                    } else {
-                        Notification.requestPermission();
-                    }
+                vm.s = s;
+                if (s === 0) {
+                    // new Notification('嘎嘎嘎呱呱啾', {
+                    //     body: "OX要開始了!"
+                    // });
                 }
             }, 1000);
         }

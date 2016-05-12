@@ -39,6 +39,9 @@
       },{
           link: 'puzzle',
           text: 'OX猜謎'
+      },{
+          link: 'notify',
+          text: '定時提醒'
       }];
 
       vm.links = [{
