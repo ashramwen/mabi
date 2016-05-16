@@ -18,7 +18,7 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController() {
+    function NavbarController($timeout) {
       var vm = this;
 
       vm.ducks = [{
@@ -97,6 +97,9 @@
           target: '_blank',
           text: '瑪奇官網'
       }];
+      $timeout(function(){
+          $('#side-menu').metisMenu();
+      }, 0);
     }
   }
 
